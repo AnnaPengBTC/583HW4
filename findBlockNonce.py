@@ -27,8 +27,8 @@ def mine_block(k, prev_hash, rand_lines):
     target = '0' * k
 
     while True:
-        # Generate a random nonce using os.urandom
-        nonce = os.urandom(16)
+        # Generate a random nonce using secrets module
+        nonce = secrets.token_bytes(16)
         
         # Encode the combined string with the nonce appended
         nonce_str = combined_str + nonce.hex()
