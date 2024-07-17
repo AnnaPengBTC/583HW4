@@ -43,7 +43,8 @@ def mine_block(k, prev_hash, rand_lines):
         # Check if the last k bits are zero
         if binary_hash[-k:] == target:
             assert isinstance(nonce, bytes), 'nonce should be of type bytes'
-            return nonce
+            break
+    return nonce
 
 def get_random_lines(filename, quantity):
     """
